@@ -1,8 +1,7 @@
 const taskModel = require('../models/taskModel');
 
 const getControllers = async (req, res) => {
-    // Destructuring, pegando o primeiro array do elemento retornado, [ [taks], [buffer] ].
-    const [tasks] = await taskModel.getModels();
+    const tasks = await taskModel.getModels();
     return res.status(200).json(tasks);
 };
 
